@@ -10,12 +10,21 @@ console.log();
 
 // Задание №2
 let n = 76;
-console.log('Значение n равно ' + n + '.' + ' Сумма чисел равна ' + [+'7'+6]);
+let secondDigit = n % 10;
+let firstDigit = (n - secondDigit) / 10;
+let sum = secondDigit + firstDigit;
+console.log('Значение n равно ' + n + '.' + ' Сумма чисел равна ' + sum);
 console.log();
 
 // Задание №3
-let numFirst = 4, numSecond = 6;
-console.log('Было ', numFirst, numSecond);
-numFirst += 7;
-numSecond += 4;
-console.log('Стало ', numFirst, numSecond);
+let numFirst = 23, numSecond = 90;
+/*
+в num 1 сохранить значения обоих переменных
+*/
+numFirst = numFirst + numSecond;
+numSecond = numFirst - numSecond;
+numFirst = numFirst - numSecond;
+console.log(numFirst);
+console.log(numSecond);
+
+
