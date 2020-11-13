@@ -15,6 +15,7 @@ let firstDigit = (n - secondDigit) / 10;
 let sum = secondDigit + firstDigit;
 console.log('Значение n равно ' + n + '.' + ' Сумма чисел равна ' + sum);
 console.log();
+// сделать тоже самое для 3х значных чисел
 
 // Задание №3
 let numFirst = 23, numSecond = 90;
