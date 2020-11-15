@@ -12,13 +12,18 @@ let result;
 if (sum < 1000) {
     result = "Скидка не предусмотрена.";
 } else if (sum >= 1000 && sum < 2000) {
+    sum = sum - ((sum / 100) * 5);
     result = "Скидка 5%.";
 } else if (sum >= 2000 && sum <= 3000) {
+    sum = sum - ((sum / 100) * 10);
     result = "Скидка 10%.";
 } else if (sum > 3000) {
+    sum = sum - ((sum / 100) * 10);
     result = "Скидка 10% + подарок!";
 }
-console.log(result);
+console.log(`Ваша сумма: ${sum}. ${result}`);
+// Вывессти сумму в скидке. Посчитать скидку с суммой.
+
 console.log();
 // Задание №2
 /* Даны переменные: lang, salary
