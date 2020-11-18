@@ -2,13 +2,13 @@
 // Циклы
 // Вывести в консоль первые 20 элементов последовательности 2 4 8 16 32 64 128...N
 console.log("Задание №1");
-let sum = 0;
-for (let i = 0; i <= 20; i++) {
-    sum = i;
-    if (sum % 2 === 0) {
-        console.log(sum);
-    }
-}
+let seq = 2;
+let counter = 1;
+do {
+    console.log(seq);
+    seq = seq * 2;
+    counter++;
+} while (counter <= 20)
 console.log();
 
 // Вывести в консоль все неотрицательные элементы последовательности 90 85 80 75 70 65 60...N
