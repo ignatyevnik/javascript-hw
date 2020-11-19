@@ -10,6 +10,12 @@ do {
     counter++;
 } while (counter <= 20)
 console.log();
+/*let sequence = 2;
+ for (let i=1; i<=20; i++){
+     console.log(sequence);
+     sequence*=2;
+
+ }*/
 
 // Вывести в консоль все неотрицательные элементы последовательности 90 85 80 75 70 65 60...N
 console.log("Задание №2");
