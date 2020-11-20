@@ -22,11 +22,10 @@ console.log();
 console.log("Задание №2");
 let palindrom = "fa f af";
 // проверка на равенство (приравниваем все элементы строки к строчным, чтобы не было отличий)
-if (palindrom === palindrom.toLowerCase().split("").reverse().join('')) {
+if (palindrom === palindrom.toLowerCase().split('').reverse().join('')) {
     console.log("Это палиндром.");
 } else {
-    console.log("Это не палиндром.");
-}
+    console.log("Это не палиндром.");}
 
 console.log();
 // Задание №3
