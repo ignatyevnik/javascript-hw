@@ -5,7 +5,7 @@
    будет возвращать слово "товар" в нужно форме
    ("12 товаров", но "22 товара", "1 товар", "97 товаров" и тд).
 * */
-/*console.log("Задание №1");
+console.log("Задание №1");
 
 function waresCount(count) {
     let wares = "товар";
@@ -13,7 +13,7 @@ function waresCount(count) {
     let ending2 = "ов";
 
     if ((count % 100 >= 10 && count % 100 <= 20) ||
-        count === 0 || (count % 10 >= 5 && count % 10 <= 9)) {
+        count % 10 === 0 || (count % 10 >= 5 && count % 10 <= 9)) {
         return `${count} ` + wares + ending2;
     } else if (count % 10 === 1) {
         return `${count} ` + wares;
@@ -22,8 +22,8 @@ function waresCount(count) {
     }
 }
 
-console.log(waresCount(13));
-console.log();*/
+console.log(waresCount(0));
+console.log();
 
 // Задание №2
 /* Напишите функцию range, принимающую три аргумента:
@@ -48,4 +48,17 @@ console.log();
    Вычислите сумму его цифр, используя рекурсию (строки, массивы и циклы использовать запрещено).
 * */
 
-// не успел сделать задачу :(
+function sumNum(num, sum = 0) {
+    let dev = num % 10;
+    sum += dev;
+    num = Math.floor(num / 10);
+    if (num === 0) {
+        return sum;
+    } else {
+       return sumNum(num, sum);
+    }
+}
+
+let result = sumNum(76);
+
+console.log(result);
