@@ -5,13 +5,30 @@
 * Например, строка "дом" встречается в строке
 * "дом домик домой одомашненный" 4 раза*/
 console.log("Задание №1");
-// let text = "дом домик домой одомашненный";
-// let home = text.indexOf('дом');
-// console.log(home);
+let text = "дом домик домой одомашненный";
+let home = "дом";
+let counter = 0;
+let isFound = false;
 // indexOf возвращает индекс первого вхождения в массив искомого значения, если значение не найдено - возвращает -1
+while (!isFound) {
+    if (text.indexOf(home) === -1) {
+        isFound = true;
+        break;
+    }
+    let cutter = text.indexOf(home) + home.length;
+    text = text.slice(cutter);
+    counter++;
+}
 
-// Не совсем понял как работает indexOf и substring, хотел их использовать для работы со строкой
-// так как по заданию надо было использовать число точек вхождения
+console.log(`В данном предложении ${counter} вхождений слова дом`);
+
+/*let randStr = 'в сидел сиднем дед';
+let searchStr = 'сид';
+
+let indexCut = randStr.indexOf(searchStr) + searchStr.length;
+randStr = randStr.slice(indexCut);
+console.log('randStr', randStr);*/
+
 console.log();
 // Задание №2
 /*
@@ -25,7 +42,8 @@ let palindrom = "fa f af";
 if (palindrom === palindrom.toLowerCase().split('').reverse().join('')) {
     console.log("Это палиндром.");
 } else {
-    console.log("Это не палиндром.");}
+    console.log("Это не палиндром.");
+}
 
 console.log();
 // Задание №3
