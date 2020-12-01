@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+.cat-card {
+    width: 50%;
+    border: 1px solid black;
+    padding: 1%;
+}
+
+img {
+    border: 1px solid black;
+    width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+table {
+    border: 1px solid black;
+}
+
+tr th {
+    border: 1px solid black;
+}
+
+tr td {
+    border: 1px solid black;
+}
+
