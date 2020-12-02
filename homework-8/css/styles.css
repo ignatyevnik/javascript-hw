@@ -30,3 +30,11 @@ tr td {
     border: 1px solid black;
 }
 
+section {
+    margin-bottom: 30px;
+    border: 1px solid #FFAB91;
+}
+section > h2 {
+    text-align: center;
+}
+
