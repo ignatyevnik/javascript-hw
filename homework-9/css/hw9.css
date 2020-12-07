@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+section {
+    margin-bottom: 30px;
+    border: 1px solid #FFAB91;
+}
+section > h2 {
+    text-align: center;
+}
+
+
+
+/* комментарии */
+.comment {
+    display: flex;
+    margin: 2rem;
+}
+
+.comment-img {
+    flex: 1;
+    text-align: center;
+    padding: 7px;
+}
+
+.comment-img img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.comment-content {
+    flex: 7;
+}
+
+.comment-content span {
+    text-transform: uppercase;
+}
