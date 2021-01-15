@@ -35,9 +35,6 @@ for (let numsFilter = 0; numsFilter < numsArr.length; numsFilter++) {
 console.log(`${positiveNums}`);
 
 
-
-
-
 // Задание №2
 /*
 Написать функцию проверки на спам.
@@ -47,38 +44,44 @@ console.log(`${positiveNums}`);
 Результат вернуть из функции.
 */
 
-let someText = "Lorem бесплатно dolor sit xxx, consectetur adipisicing free. Eos magni заработок perspiciatis quo баксы! Repellat?";
+let someText = "Lorem бесплатно dolor sit xxx, consectetur adipisicing free. Eos magni заработок perspiciatis quo баксы! Repellat? скидка скидка";
 
 // функция проверки на спам
 function spamChecker(text, ...spam) {
     let spamCount = 0;
-    let spamLowerCase = text.toLowerCase().split(" ");
-    for(let i = 0; i < spamLowerCase.length; i++) {
-        for(let spamWord of spam) {
-            if(spamLowerCase[i].includes(spamWord)) {
-                spamCount += 1;
-            }
-        }
+    let spamLowerCase = text.toLowerCase().replace(/[/.,!?;]*/g, '').split(" ");
+
+    // for(let i = 0; i < spamLowerCase.length; i++) {
+    //     for(let spamWord of spam) {
+    //         if(spamLowerCase[i]===spamWord) {
+    //             spamCount += 1;
+    //         }
+    //     }
+    // }
+
+    for (let spamWord of spam) {
+        let result = spamLowerCase.filter(function (word) {
+            return word === spamWord.toLowerCase();
+        })
+
+        spamCount += result.length;
     }
 
     // проверка на частоту спама в тексте
-    if(spamCount === 0) {
+    if (spamCount === 0) {
         console.log("Текст чист, спама не обнаружено.");
-    } else if(spamCount === 1) {
-        console.log("Присутствует 1 слов0 из списка.");
-    } else if(spamCount === 2) {
+    } else if (spamCount === 1) {
+        console.log("Присутствует 1 слово из списка.");
+    } else if (spamCount === 2) {
         console.log("Присутствует 2 слова из списка.");
-    } else if(spamCount === 3) {
+    } else if (spamCount === 3) {
         console.log("Присутствует 3 слова из списка.");
-    } else if(spamCount === 4) {
-        console.log("Присутствует 4 слова из списка.");
     } else {
-        console.log("Присутствует более 4 слов в списке.")
+        console.log(`Колличество спам-слов в тексте: ${spamCount}.`);
     }
 }
 
-spamChecker(someText,'Бесплатно', 'xxx', 'free', 'заработок', 'баксы', 'деньги', 'срочно', 'выигрыш', 'приз', 'денежный', 'приз', 'скидки', 'скидка');
-
+spamChecker(someText, 'Бесплатно', 'xxx', 'free', 'заработок', 'баксы', 'деньги', 'срочно', 'выигрыш', 'приз', 'денежный', 'приз', 'скидки', 'скидка');
 
 
 // Задание №3
