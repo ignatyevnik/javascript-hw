@@ -46,18 +46,39 @@ console.log(`${positiveNums}`);
 Определить по 5ти бальной шкале, как часто в тексте встречается спам.
 Результат вернуть из функции.
 */
-// function spamCounter(text, ...spam) {
-//     let counter = 0;
-//     for ()
-//     let str = text.toLowerCase().split(' ');
-//     console.log(str);
-//
-// }
 
-// let someText = "Lorem бесплатно dolor sit xxx, consectetur adipisicing free. Eos magni заработок perspiciatis quo баксы! Repellat?";
+let someText = "Lorem бесплатно dolor sit xxx, consectetur adipisicing free. Eos magni заработок perspiciatis quo баксы! Repellat?";
 
-// let output = spamCounter(someText,'Бесплатно', 'xxx', 'free', 'заработок', 'баксы', 'деньги', 'срочно', 'выигрыш', 'приз', 'денежный', 'приз', 'скидки', 'скидка');
-// console.log(output);
+// функция проверки на спам
+function spamChecker(text, ...spam) {
+    let spamCount = 0;
+    let spamLowerCase = text.toLowerCase().split(" ");
+    for(let i = 0; i < spamLowerCase.length; i++) {
+        for(let spamWord of spam) {
+            if(spamLowerCase[i].includes(spamWord)) {
+                spamCount += 1;
+            }
+        }
+    }
+
+    // проверка на частоту спама в тексте
+    if(spamCount === 0) {
+        console.log("Текст чист, спама не обнаружено.");
+    } else if(spamCount === 1) {
+        console.log("Присутствует 1 слов0 из списка.");
+    } else if(spamCount === 2) {
+        console.log("Присутствует 2 слова из списка.");
+    } else if(spamCount === 3) {
+        console.log("Присутствует 3 слова из списка.");
+    } else if(spamCount === 4) {
+        console.log("Присутствует 4 слова из списка.");
+    } else {
+        console.log("Присутствует более 4 слов в списке.")
+    }
+}
+
+spamChecker(someText,'Бесплатно', 'xxx', 'free', 'заработок', 'баксы', 'деньги', 'срочно', 'выигрыш', 'приз', 'денежный', 'приз', 'скидки', 'скидка');
+
 
 
 // Задание №3
@@ -72,3 +93,19 @@ console.log(`${positiveNums}`);
 
 Число для проверки:
  let age = Math.floor(Math.random() * 100); */
+
+console.log("Задание №3");
+
+let more18 = nums => nums > 18;
+let less30 = nums => nums < 30;
+
+let arr = [more18, less30];
+
+function ageCheck(funcArray) {
+    let age = Math.floor(Math.random() * 100);
+    console.log(age);
+    return funcArray[0](age) && funcArray[1](age);
+}
+
+let result = ageCheck(arr);
+console.log(result);
